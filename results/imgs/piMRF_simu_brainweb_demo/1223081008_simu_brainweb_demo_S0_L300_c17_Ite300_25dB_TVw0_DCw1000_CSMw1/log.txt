@@ -1,0 +1,66 @@
+######### Configuration Log #########
+---------Code_label: piMRF_simu_brainweb_demo
+---------Model: simu_brainweb
+---------Hyper_para_loss_weight: weight_simu_brainweb_demo_fisp
+---------Hyper_para_backbone: default_setting
+---------Forward_Bloch_simulator: nabla_BlochNet_fisp
+---------Sequence: original_fisp
+---------Csm: csm_17coils
+---------Ktraj: ktraj_SPI
+---------Display: viridis
+---------Tv mode: huber
+
+######################################
+
+After init, GPU memory usage:
+GPU memory usage for current process (PID: 760566):
+  GPU device: NVIDIA A40 (device ID: 0)
+  allocated: 0.9102 GB
+  reserved: 10.7012 GB
+  peak allocated: 9.4974 GB
+  peak reserved: 10.7012 GB
+Successfully define backbone model with skip connection!
+
+Done model define, before training, GPU memory usage:
+GPU memory usage for current process (PID: 760566):
+  GPU device: NVIDIA A40 (device ID: 0)
+  allocated: 2.8603 GB
+  reserved: 14.3809 GB
+  peak allocated: 13.1002 GB
+  peak reserved: 14.3809 GB
+
+
+----- Iteration 99: --------------------> 
+dc_loss=159.8599090576172, csm_loss=677.990478515625, tv_loss=8.029084205627441
+GPU_memory_info:
+GPU memory usage for current process (PID: 760566):
+  GPU device: NVIDIA A40 (device ID: 0)
+  allocated: 3.3922 GB
+  reserved: 14.3809 GB
+  peak allocated: 13.1002 GB
+  peak reserved: 14.3809 GB
+
+
+----- Iteration 199: --------------------> 
+dc_loss=146.54331970214844, csm_loss=545.3180541992188, tv_loss=7.183464050292969
+GPU_memory_info:
+GPU memory usage for current process (PID: 760566):
+  GPU device: NVIDIA A40 (device ID: 0)
+  allocated: 3.3927 GB
+  reserved: 14.3809 GB
+  peak allocated: 13.1002 GB
+  peak reserved: 14.3809 GB
+
+
+----- Iteration 299: --------------------> 
+dc_loss=144.66748046875, csm_loss=523.7670288085938, tv_loss=7.245953559875488
+GPU_memory_info:
+GPU memory usage for current process (PID: 760566):
+  GPU device: NVIDIA A40 (device ID: 0)
+  allocated: 3.3927 GB
+  reserved: 14.3809 GB
+  peak allocated: 13.1002 GB
+  peak reserved: 14.3809 GB
+---------Runtime:Reconstruction process took 6.73 minutes---------
+---------NMSE:NMSE_T1: 0.0023, NMSE_T2: 0.0082, NMSE_PD: 0.0015---------
+PSNR: 36.6290
