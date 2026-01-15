@@ -1,0 +1,11 @@
+# Core Dependencies
+torch==2.7.1
+numpy==1.26.4
+scipy==1.15.2
+matplotlib==3.10.3
+tqdm==4.67.1
+tensorboard==2.19.0
+
+# Custom NUFFT implementation (Required)
+git+https://github.com/Ashgon/torchkbnufft.git
+

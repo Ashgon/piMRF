@@ -1,0 +1,183 @@
+######### Configuration Log #########
+---------Code_label: piMRF_simu_brainweb_demo
+---------Model: simu_brainweb
+---------Hyper_para_loss_weight: weight_simu_brainweb_demo_fisp
+---------Hyper_para_backbone: default_setting
+---------Forward_Bloch_simulator: nabla_BlochNet_fisp
+---------Sequence: original_fisp
+---------Csm: csm_17coils
+---------Ktraj: ktraj_SPI
+---------Display: viridis
+---------Tv mode: huber
+
+
+######### Dashboard Overview #########
+---------Source Flag: simu_brainweb_demo
+---------Slice Index: 0
+---------T1 Range: 10 - 5000
+---------T2 Range: 10 - 500
+---------Data Consistency Weight (DC): 1000.0
+---------TV Regularization total Weight: 0.03
+---------TV Regularization Weights: [0.29999998211860657, 0.44999998807907104, 150.0]
+---------CSM Weight: 1.0
+---------Scale Factor: 1
+---------L Length: 300
+
+
+######### Task Settings #########
+---------Unique_flag: 1223081008
+---------Unique_suffix_signature: 1223081008_simu_brainweb_demo_S0_L300_c17_Ite300_25dB_TVw0_DCw1000_CSMw1
+---------Save_NET_root: ./results/Model_save
+---------save_img_root: ./results/imgs
+---------result_archive_root: ./results/outputs/piMRF_simu_brainweb_demo
+---------temp_img_save_boot: ./results/imgs/piMRF_simu_brainweb_demo/1223081008_simu_brainweb_demo_S0_L300_c17_Ite300_25dB_TVw0_DCw1000_CSMw1
+---------log_file_path: ./results/imgs/piMRF_simu_brainweb_demo/1223081008_simu_brainweb_demo_S0_L300_c17_Ite300_25dB_TVw0_DCw1000_CSMw1/log.txt
+
+
+######### Common Settings #########
+---------Para_length: 300
+---------Seed_value: 42
+---------Is_noisy: True
+---------Undksp_snr: 25
+---------Rank: 5
+
+
+######### Data Model Settings #########
+---------Obj_type: brain
+---------Img_size: [220, 220]
+---------Data_path: ./data/para_map.mat
+---------Data_name: para_maps
+---------SliceIndex: 0
+---------RefMap_path: 
+---------RefMap_name: 
+---------Mask_path: 
+---------Mask_name: 
+---------Mask_for_NMSE_path: ./data/mask_woskull.mat
+---------Mask_for_NMSE_name: mask_woskull
+---------Src_flag: simu_brainweb_demo
+---------Scale_factor: 1
+---------T1_max: 5000
+---------T2_max: 500
+
+
+######### Sequence Settings #########
+---------Sequence: original_fisp
+---------FA_TR_path: ./data/FATR_FISP_MRF.mat
+---------FA_type: FAs
+---------TR_type: TRs
+---------TE: 2.98
+
+
+######### CSM Settings #########
+---------Csm_path: ./data/csmaps_17coils.mat
+---------Csm_name: csmaps
+---------Num_coils: 17
+
+
+######### Ktraj Settings #########
+---------Ktraj_path: ./data/SPI_ktraj.mat
+---------Ktraj_name: ktraj
+---------Num_interleaves: 36
+---------Num_spoke_perTR: 1
+---------Valid_start_samples: None
+---------Valid_end_samples: None
+
+
+######### Hyper_para_weight Settings #########
+---------Dc_data_weight: 1000.0
+---------DC_csm_weight: 1.0
+---------Tv_mode: huber
+---------Tv_weight: [0.29999998211860657, 0.44999998807907104, 150.0]
+
+
+######### Hyper_para_backbone Settings #########
+---------Unsuper_Iter_num: 300
+---------Img_save_pre: 100
+---------Backup_interval: 120
+---------Unsuper_LrRate: 0.0001
+---------Lr_scheduler_ParaMaps_step_size: 50
+---------Lr_scheduler_ParaMaps_gamma: 0.8
+---------lr_scheduler_CSMaps_step_size: 50
+---------lr_scheduler_CSMaps_gamma: 0.8
+---------T1 Range: 10 - 5000
+---------T2 Range: 10 - 500
+---------T1_min: 10
+---------T1_max: 5000
+---------T2_min: 10
+---------T2_max: 500
+---------PD_min: 0
+---------PD_max: 1
+---------Dic_m_min: -0.2
+---------Dic_m_max: 0.5
+---------Dic_dmdt1_min: -0.0018
+---------Dic_dmdt1_max: 2.5e-05
+---------Dic_dmdt2_min: -0.0025
+---------Dic_dmdt2_max: 0.0025
+
+
+######### Transform_method Settings #########
+---------Grid_factor: 2
+---------Numpoints: 6
+---------Norm: ortho
+---------Torch_batch_size_L: 150
+---------Torch_batch_size_k: 5.0
+---------Bloch_sim_batch_size: 53777.0
+
+
+######### Forward_Bloch_simulator Settings #########
+---------Simulator_type: piMRF_fisp
+---------NablaBlochNet_path: ./model/nabla-BlochNet/nabla_blochnet_L300.pth
+######################################
+
+After init, GPU memory usage:
+GPU memory usage for current process (PID: 760566):
+  GPU device: NVIDIA A40 (device ID: 0)
+  allocated: 0.9102 GB
+  reserved: 10.7012 GB
+  peak allocated: 9.4974 GB
+  peak reserved: 10.7012 GB
+Successfully define backbone model with skip connection!
+
+Done model define, before training, GPU memory usage:
+GPU memory usage for current process (PID: 760566):
+  GPU device: NVIDIA A40 (device ID: 0)
+  allocated: 2.8603 GB
+  reserved: 14.3809 GB
+  peak allocated: 13.1002 GB
+  peak reserved: 14.3809 GB
+
+
+----- Iteration 99: --------------------> 
+dc_loss=159.8599090576172, csm_loss=677.990478515625, tv_loss=8.029084205627441
+GPU_memory_info:
+GPU memory usage for current process (PID: 760566):
+  GPU device: NVIDIA A40 (device ID: 0)
+  allocated: 3.3922 GB
+  reserved: 14.3809 GB
+  peak allocated: 13.1002 GB
+  peak reserved: 14.3809 GB
+
+
+----- Iteration 199: --------------------> 
+dc_loss=146.54331970214844, csm_loss=545.3180541992188, tv_loss=7.183464050292969
+GPU_memory_info:
+GPU memory usage for current process (PID: 760566):
+  GPU device: NVIDIA A40 (device ID: 0)
+  allocated: 3.3927 GB
+  reserved: 14.3809 GB
+  peak allocated: 13.1002 GB
+  peak reserved: 14.3809 GB
+
+
+----- Iteration 299: --------------------> 
+dc_loss=144.66748046875, csm_loss=523.7670288085938, tv_loss=7.245953559875488
+GPU_memory_info:
+GPU memory usage for current process (PID: 760566):
+  GPU device: NVIDIA A40 (device ID: 0)
+  allocated: 3.3927 GB
+  reserved: 14.3809 GB
+  peak allocated: 13.1002 GB
+  peak reserved: 14.3809 GB
+---------Runtime:Reconstruction process took 6.73 minutes---------
+---------NMSE:NMSE_T1: 0.0023, NMSE_T2: 0.0082, NMSE_PD: 0.0015---------
+PSNR: 36.6290

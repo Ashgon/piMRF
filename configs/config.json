@@ -1,0 +1,156 @@
+{
+  "setting": {
+
+        "code_label": "piMRF_",        
+        "forward_Bloch_simulator": "nabla_BlochNet_fisp",
+        "display": "viridis",
+        "use_group": "simu_brainweb_group_fisp"
+  },
+  
+  "common": {
+    "para_length": 300,
+    "seed_value": 42,
+    "is_noisy": true,
+    "undksp_snr": 25,
+    "rank": 5
+  },
+
+  "groups": {       
+
+        "simu_brainweb_group_fisp": {
+            "model": "simu_brainweb",
+            "hyper_para_loss_weight":"weight_simu_brainweb_demo_fisp",
+            "hyper_para_backbone": "default_setting",
+            "sequence": "original_fisp",
+            "csm": "csm_17coils",
+            "ktraj": "ktraj_SPI"
+        }
+  },
+  
+  "model": {        
+        
+        "simu_brainweb": {
+            "obj_type": "brain",
+            "datasource": "brainweb",
+            "img_size": [220, 220],
+            "data_path": "./data/para_map.mat",
+            "data_name": "para_maps",
+            "sliceIndex": 0,
+            "validStartFrame": 1,
+            "refMap_path": "",
+            "refMap_name": "",
+            "mask_path": "",
+            "mask_name": "",
+            "mask_for_NMSE_path": "./data/mask_woskull.mat",
+            "mask_for_NMSE_name":"mask_woskull",
+            "src_flag": "simu_brainweb_demo",
+            "scale_factor": 1,
+            "T1_max": 5000,
+            "T2_max": 500
+        }
+  },  
+
+  "hyper_para_backbone": {
+
+      "default_setting": {
+          "unsuper_Iter_num": 300,
+          "img_save_pre": 100,
+          "backup_interval": 120,
+          "unsuper_LrRate": 1e-4,
+            
+          "lr_scheduler_ParaMaps_step_size": 50,
+          "lr_scheduler_ParaMaps_gamma": 0.8, 
+          "lr_scheduler_CSMaps_step_size": 50,  
+          "lr_scheduler_CSMaps_gamma": 0.8,          
+
+          "T1_min": 10,
+          "T2_min": 10,
+          "PD_min": 0,
+          "PD_max": 1,
+
+          "dic_m_min": -0.2,
+          "dic_m_max": 0.5,
+          "dic_dmdt1_min": -1.8e-3,
+          "dic_dmdt1_max": 0.25e-4,
+          "dic_dmdt2_min": -2.5e-3,
+          "dic_dmdt2_max": 2.5e-3,
+
+          "backbone_in_features": 10,
+          "backbone_hidden_features": 256,
+          "backbone_hidden_layers": 2,
+          "backbone_out_features": 1
+      }
+  },
+
+  "hyper_para_loss_weight": {
+
+      "weight_simu_brainweb_demo_fisp": {
+          "default_dc_weight": 1e3,
+          "tv_mode": "huber",
+          "default_tv_total_weight": 3e-2,
+          "default_tv_weight": [1e1, 1.5e1, 5e3],
+          "default_csm_weight": 1e0
+      }
+  },
+
+  "forward_Bloch_simulator": {
+
+      "nabla_BlochNet_fisp": {
+          "simulator_type": "piMRF_fisp",
+          "nabla_BlochNet_path": "./model/nabla-BlochNet/nabla_blochnet_L300.pth"
+      }
+  },
+
+  "sequence": {
+
+      "original_fisp": {
+            "FA_TR_path": "./data/FATR_FISP_MRF.mat",
+            "FA_type": "FAs",
+            "TR_type": "TRs",
+            "TE": 2.98
+        }
+  },
+
+  "csm": {
+      
+      "csm_17coils": {
+          "csm_path": "./data/csmaps_17coils.mat",
+          "csm_name": "csmaps",
+          "num_coils": 17
+      }
+  },
+
+  "ktraj": {      
+
+        "ktraj_SPI": {
+            "ktraj_path": "./data/SPI_ktraj.mat",
+            "ktraj_name": "ktraj",
+            "trajStartPoint": 1,
+            "trajEndPoint": null,
+            "num_interleaves":  36,
+            "num_spoke_perTR": 1,
+            "valid_start_samples": null,
+            "valid_end_samples": null
+        }
+  },
+  
+  "display": {
+
+      "viridis": {
+          "colormap": "viridis"
+      },
+      
+      "gray": {
+          "colormap": "gray"
+      },
+
+      "jet": {
+          "colormap": "jet"
+      },
+
+      "hot": {
+          "colormap": "hot"
+      }
+  }  
+
+}
